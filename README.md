@@ -7,8 +7,7 @@ This repository contains the code and results for my **Master’s thesis**, wher
 ## 📂 Repository Structure
 - **📁 Code/**: R scripts used for data processing, model training, and evaluation.
 - **📁 Data/**: Processed datasets used in the study.
-- **📁 Results/**: Model outputs, figures, and summary tables.
-- **📁 Figures/**: Visualizations such as histograms, residual plots, and variable importance.
+- **📁 plots/**:  Visualizations such as histograms, residual plots, and variable importance.
 
 ## 🖥️ Methodology
 - **Machine Learning Model:** Random Forest (Ranger package)
@@ -25,3 +24,10 @@ This repository contains the code and results for my **Master’s thesis**, wher
 To run the analysis, ensure you have the required R libraries installed:
 ```r
 install.packages(c("raster", "sf", "dplyr", "caret", "ranger", "ggplot2", "sp", "gstat", "corrplot", "spdep", "ape"))
+
+Since the original raster files are not included in this repository due to their size, the .RData files contain pre-processed data used in the study:
+
+    fully_cleaned_data.RData: Contains the cleaned dataset used for training and testing the models (fully_cleaned_data).
+    traindata.RData: The training subset (trainData) used to fit the Random Forest model.
+    testdata.RData: The test subset (testData) used to evaluate model performance.
+    forestmodel.RData: Stores the trained Random Forest model (randomForest) for further analysis.
