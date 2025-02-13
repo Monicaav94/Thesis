@@ -5,10 +5,10 @@
 This repository contains the code and results for my **Master’s thesis**, where I applied machine learning techniques to predict **Forest Condition Anomalies (FCA)** using environmental variables. The study focuses on analyzing the factors influencing FCA across German forests.
 
 ## 📂 Repository Structure
-- **📁 Code/**: R script used for data processing, model training, and evaluation.
+- **📁 Codes/**: R script used for data processing, model training, and evaluation.
 - **📁 Data/**: Processed datasets used in the study.
 - **📁 plots/**:  Visualizations such as histograms, residual plots, and variable importance.
-- **📁 Results/**: Random Forest model results.
+- **📁 results/**: Random Forest model results.
 
 ## 🖥️ Methodology
 - **Machine Learning Model:** Random Forest (Ranger package)
