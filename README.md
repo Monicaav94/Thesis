@@ -20,6 +20,7 @@ This repository contains the code and results for my **Master’s thesis**, wher
 - Residuals showed **weak spatial autocorrelation**, suggesting that FCA variations are primarily driven by **localized environmental stressors**.
 - A **linear regression model** was also tested, but it showed **even lower predictive power (R² ≈ 0.03)**.
 - A **classification approach** based on FCA thresholds (Lange et al., 2024) achieved **41% accuracy**, reinforcing the complexity of FCA prediction.
+- Integration of **Climate data, management Data, specific tree attributes and evaluating FCA gradientes over time**, will improve the prediction of FCA values.
 
 ## 🔧 How to Run the Code
 To run the analysis, ensure you have the required R libraries installed:
