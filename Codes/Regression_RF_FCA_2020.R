@@ -23,10 +23,13 @@ library(ggrepel)
 ############   However, this is provided only as an example to illustrate the data structure, as the ################
 ############   Original datasets are not included in this repository.                                ################
 #####################################################################################################################
+####               To ensure reproducibility, RData files bellow, are provided in this repository,   ################
+####                  containing all the necessary preprocessed data required to run the script.     ################
+# Load preprocessed datasets (Update the path accordingly)
 
-load("/acostave/2020/traindata.RData") #change with the current path (located in Data file)
-load("/acostave/2020/testdata.RData") #change with the current path (located in Data file)
-load("/acostave/2020/forestmodel.RData") #change with the current path (located in Data file)
+load("/acostave/2020/traindata.RData") #change with the correct path (located in Data folder)
+load("/acostave/2020/testdata.RData") #change with the correct path (located in Data folder)
+load("/acostave/2020/forestmodel.RData") #change with the correct path (located in Data folder)
 
 #######################################################################################################################
 
