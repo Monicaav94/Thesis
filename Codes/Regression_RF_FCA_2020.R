@@ -23,7 +23,7 @@ load("/gpfs1/work/acostave/120000/shannon_samples.RData")
 load("/gpfs1/work/acostave/120000/utm32.RData")
 load("/gpfs1/work/acostave/120000/tsm_matrix.RData")
 
-####
+#### #the RData with the random forest Model result, the training data, testing data and complete table are in here
 
 load("/gpfs1/work/acostave/2020/traindata.RData")
 load("/gpfs1/work/acostave/2020/testdata.RData")
