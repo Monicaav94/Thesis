@@ -1,0 +1,378 @@
+Loading required package: sp
+Linking to GEOS 3.11.1, GDAL 3.6.2, PROJ 9.1.1; sf_use_s2() is TRUE
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:raster’:
+
+    intersect, select, union
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: ggplot2
+Loading required package: lattice
+
+Attaching package: ‘lime’
+
+The following object is masked from ‘package:dplyr’:
+
+    explain
+
+corrplot 0.92 loaded
+Loading required package: spData
+To access larger datasets in this package, install the spDataLarge
+package with: `install.packages('spDataLarge',
+repos='https://nowosad.github.io/drat/', type='source')`
+Registered S3 method overwritten by 'ape':
+  method   from 
+  plot.mst spdep
+
+Attaching package: ‘ape’
+
+The following object is masked from ‘package:dplyr’:
+
+    where
+
+The following objects are masked from ‘package:raster’:
+
+    rotate, zoom
+
+Loading required package: viridisLite
+[1] "rasters imported"
+'data.frame':	120000 obs. of  10 variables:
+ $ shannon_41x41: num  0.752 0.661 0.588 0.516 0.684 ...
+ $ soil_        : Factor w/ 70 levels "1","3","4","5",..: 30 3 16 16 16 1 24 24 24 16 ...
+ $ elevation_   : Factor w/ 4 levels "1","2","3","4": 1 1 1 1 1 1 1 1 1 1 ...
+ $ slope_       : num  0.855 0.145 0.736 0.222 0.444 ...
+ $ aspect_      : num  216 232.1 47.5 105 59.3 ...
+ $ entropy_     : num  0.546 0.489 0 0.058 0.357 ...
+ $ twi_         : num  10909 12232 11250 13466 10851 ...
+ $ dominant_sp_ : Factor w/ 12 levels "2","3","4","5",..: 3 1 8 6 6 NA 6 6 6 NA ...
+ $ forestcover_ : num  0.185 0.411 1 0.984 0.804 ...
+ $ fca_         : num  -0.0292 -0.0492 -0.0159 0.2254 0.1813 ...
+'data.frame':	109433 obs. of  12 variables:
+ $ x            : num  457108 488988 498520 497439 496253 ...
+ $ y            : num  6089163 6083126 6081028 6080732 6080012 ...
+ $ shannon_41x41: num  0.752 0.661 0.588 0.516 0.684 ...
+ $ soil_        : Factor w/ 70 levels "1","3","4","5",..: 30 3 16 16 16 24 24 24 5 30 ...
+ $ elevation_   : Factor w/ 4 levels "1","2","3","4": 1 1 1 1 1 1 1 1 1 1 ...
+ $ slope_       : num  0.855 0.145 0.736 0.222 0.444 ...
+ $ aspect_      : num  216 232.1 47.5 105 59.3 ...
+ $ entropy_     : num  0.546 0.489 0 0.058 0.357 ...
+ $ twi_         : num  10909 12232 11250 13466 10851 ...
+ $ dominant_sp_ : Factor w/ 12 levels "2","3","4","5",..: 3 1 8 6 6 6 6 6 6 2 ...
+ $ forestcover_ : num  0.185 0.411 1 0.984 0.804 ...
+ $ fca_         : num  -0.0292 -0.0492 -0.0159 0.2254 0.1813 ...
+ - attr(*, "na.action")= 'omit' Named int [1:10567] 6 10 30 36 39 44 47 54 55 57 ...
+  ..- attr(*, "names")= chr [1:10567] "6" "10" "30" "36" ...
+              shannon_41x41      slope_      aspect_     entropy_        twi_
+shannon_41x41    1.00000000  0.02060817  0.013747689  0.178532962 -0.04666509
+slope_           0.02060817  1.00000000  0.009956940  0.013186793 -0.58949416
+aspect_          0.01374769  0.00995694  1.000000000  0.006798555 -0.01930352
+entropy_         0.17853296  0.01318679  0.006798555  1.000000000 -0.02825517
+twi_            -0.04666509 -0.58949416 -0.019303520 -0.028255167  1.00000000
+forestcover_    -0.18754991  0.01489737 -0.011379582 -0.836772464  0.01968464
+              forestcover_
+shannon_41x41  -0.18754991
+slope_          0.01489737
+aspect_        -0.01137958
+entropy_       -0.83677246
+twi_            0.01968464
+forestcover_    1.00000000
+null device 
+          1 
+[1] "traindatacreated"
+[1] "testdatacreated"
+'data.frame':	109433 obs. of  12 variables:
+ $ x            : num  457108 488988 498520 497439 496253 ...
+ $ y            : num  6089163 6083126 6081028 6080732 6080012 ...
+ $ shannon_41x41: num  0.825 0.725 0.645 0.566 0.751 ...
+ $ soil_        : Factor w/ 70 levels "1","3","4","5",..: 30 3 16 16 16 24 24 24 5 30 ...
+ $ elevation_   : Factor w/ 4 levels "1","2","3","4": 1 1 1 1 1 1 1 1 1 1 ...
+ $ slope_       : num  0.01334 0.00226 0.01149 0.00346 0.00693 ...
+ $ aspect_      : num  0.6 0.645 0.132 0.292 0.165 ...
+ $ entropy_     : num  0.973 0.871 0 0.103 0.636 ...
+ $ twi_         : num  0.375 0.463 0.398 0.545 0.371 ...
+ $ dominant_sp_ : Factor w/ 12 levels "2","3","4","5",..: 3 1 8 6 6 6 6 6 6 2 ...
+ $ forestcover_ : num  0.182 0.409 1 0.984 0.804 ...
+ $ fca_         : num  -0.0292 -0.0492 -0.0159 0.2254 0.1813 ...
+ - attr(*, "na.action")= 'omit' Named int [1:10567] 6 10 30 36 39 44 47 54 55 57 ...
+  ..- attr(*, "names")= chr [1:10567] "6" "10" "30" "36" ...
+[1] 109433     12
+[1] 87546    12
+[1] 21887    12
+ [1] "x"             "y"             "shannon_41x41" "soil_"        
+ [5] "elevation_"    "slope_"        "aspect_"       "entropy_"     
+ [9] "twi_"          "dominant_sp_"  "forestcover_"  "fca_"         
+Growing trees.. Progress: 23%. Estimated remaining time: 1 minute, 44 seconds.
+Growing trees.. Progress: 48%. Estimated remaining time: 1 minute, 7 seconds.
+Growing trees.. Progress: 72%. Estimated remaining time: 35 seconds.
+Computing permutation importance.. Progress: 0%. Estimated remaining time: 6 hours, 24 minutes, 27 seconds.
+Computing permutation importance.. Progress: 4%. Estimated remaining time: 26 minutes, 0 seconds.
+Computing permutation importance.. Progress: 6%. Estimated remaining time: 25 minutes, 4 seconds.
+Computing permutation importance.. Progress: 10%. Estimated remaining time: 19 minutes, 3 seconds.
+Computing permutation importance.. Progress: 12%. Estimated remaining time: 19 minutes, 50 seconds.
+Computing permutation importance.. Progress: 16%. Estimated remaining time: 16 minutes, 53 seconds.
+Computing permutation importance.. Progress: 18%. Estimated remaining time: 16 minutes, 46 seconds.
+Computing permutation importance.. Progress: 22%. Estimated remaining time: 15 minutes, 12 seconds.
+Computing permutation importance.. Progress: 24%. Estimated remaining time: 14 minutes, 55 seconds.
+Computing permutation importance.. Progress: 28%. Estimated remaining time: 13 minutes, 53 seconds.
+Computing permutation importance.. Progress: 30%. Estimated remaining time: 13 minutes, 27 seconds.
+Computing permutation importance.. Progress: 35%. Estimated remaining time: 11 minutes, 50 seconds.
+Computing permutation importance.. Progress: 38%. Estimated remaining time: 11 minutes, 20 seconds.
+Computing permutation importance.. Progress: 42%. Estimated remaining time: 10 minutes, 27 seconds.
+Computing permutation importance.. Progress: 44%. Estimated remaining time: 10 minutes, 8 seconds.
+Computing permutation importance.. Progress: 48%. Estimated remaining time: 9 minutes, 24 seconds.
+Computing permutation importance.. Progress: 50%. Estimated remaining time: 9 minutes, 0 seconds.
+Computing permutation importance.. Progress: 54%. Estimated remaining time: 8 minutes, 18 seconds.
+Computing permutation importance.. Progress: 56%. Estimated remaining time: 8 minutes, 4 seconds.
+Computing permutation importance.. Progress: 59%. Estimated remaining time: 7 minutes, 17 seconds.
+Computing permutation importance.. Progress: 62%. Estimated remaining time: 6 minutes, 54 seconds.
+Computing permutation importance.. Progress: 65%. Estimated remaining time: 6 minutes, 14 seconds.
+Computing permutation importance.. Progress: 68%. Estimated remaining time: 5 minutes, 52 seconds.
+Computing permutation importance.. Progress: 71%. Estimated remaining time: 5 minutes, 9 seconds.
+Computing permutation importance.. Progress: 73%. Estimated remaining time: 4 minutes, 49 seconds.
+Computing permutation importance.. Progress: 77%. Estimated remaining time: 4 minutes, 4 seconds.
+Computing permutation importance.. Progress: 80%. Estimated remaining time: 3 minutes, 33 seconds.
+Computing permutation importance.. Progress: 84%. Estimated remaining time: 2 minutes, 54 seconds.
+Computing permutation importance.. Progress: 87%. Estimated remaining time: 2 minutes, 19 seconds.
+Computing permutation importance.. Progress: 90%. Estimated remaining time: 1 minute, 45 seconds.
+Computing permutation importance.. Progress: 94%. Estimated remaining time: 1 minute, 2 seconds.
+Computing permutation importance.. Progress: 98%. Estimated remaining time: 21 seconds.
+Growing trees.. Progress: 23%. Estimated remaining time: 1 minute, 45 seconds.
+Growing trees.. Progress: 49%. Estimated remaining time: 1 minute, 4 seconds.
+Growing trees.. Progress: 74%. Estimated remaining time: 33 seconds.
+Computing permutation importance.. Progress: 0%. Estimated remaining time: 6 hours, 47 minutes, 45 seconds.
+Computing permutation importance.. Progress: 5%. Estimated remaining time: 22 minutes, 34 seconds.
+Computing permutation importance.. Progress: 7%. Estimated remaining time: 22 minutes, 11 seconds.
+Computing permutation importance.. Progress: 12%. Estimated remaining time: 16 minutes, 33 seconds.
+Computing permutation importance.. Progress: 14%. Estimated remaining time: 17 minutes, 5 seconds.
+Computing permutation importance.. Progress: 17%. Estimated remaining time: 15 minutes, 42 seconds.
+Computing permutation importance.. Progress: 20%. Estimated remaining time: 15 minutes, 4 seconds.
+Computing permutation importance.. Progress: 23%. Estimated remaining time: 13 minutes, 59 seconds.
+Computing permutation importance.. Progress: 27%. Estimated remaining time: 13 minutes, 15 seconds.
+Computing permutation importance.. Progress: 29%. Estimated remaining time: 13 minutes, 14 seconds.
+Computing permutation importance.. Progress: 33%. Estimated remaining time: 11 minutes, 59 seconds.
+Computing permutation importance.. Progress: 35%. Estimated remaining time: 11 minutes, 48 seconds.
+Computing permutation importance.. Progress: 39%. Estimated remaining time: 10 minutes, 52 seconds.
+Computing permutation importance.. Progress: 42%. Estimated remaining time: 10 minutes, 32 seconds.
+Computing permutation importance.. Progress: 45%. Estimated remaining time: 9 minutes, 45 seconds.
+Computing permutation importance.. Progress: 48%. Estimated remaining time: 9 minutes, 11 seconds.
+Computing permutation importance.. Progress: 51%. Estimated remaining time: 8 minutes, 37 seconds.
+Computing permutation importance.. Progress: 55%. Estimated remaining time: 7 minutes, 59 seconds.
+Computing permutation importance.. Progress: 57%. Estimated remaining time: 7 minutes, 35 seconds.
+Computing permutation importance.. Progress: 61%. Estimated remaining time: 6 minutes, 52 seconds.
+Computing permutation importance.. Progress: 63%. Estimated remaining time: 6 minutes, 31 seconds.
+Computing permutation importance.. Progress: 67%. Estimated remaining time: 5 minutes, 51 seconds.
+Computing permutation importance.. Progress: 70%. Estimated remaining time: 5 minutes, 20 seconds.
+Computing permutation importance.. Progress: 73%. Estimated remaining time: 4 minutes, 43 seconds.
+Computing permutation importance.. Progress: 76%. Estimated remaining time: 4 minutes, 16 seconds.
+Computing permutation importance.. Progress: 80%. Estimated remaining time: 3 minutes, 35 seconds.
+Computing permutation importance.. Progress: 83%. Estimated remaining time: 3 minutes, 0 seconds.
+Computing permutation importance.. Progress: 86%. Estimated remaining time: 2 minutes, 32 seconds.
+Computing permutation importance.. Progress: 88%. Estimated remaining time: 2 minutes, 3 seconds.
+Computing permutation importance.. Progress: 92%. Estimated remaining time: 1 minute, 25 seconds.
+Computing permutation importance.. Progress: 96%. Estimated remaining time: 40 seconds.
+Growing trees.. Progress: 24%. Estimated remaining time: 1 minute, 40 seconds.
+Growing trees.. Progress: 49%. Estimated remaining time: 1 minute, 5 seconds.
+Growing trees.. Progress: 76%. Estimated remaining time: 29 seconds.
+Computing permutation importance.. Progress: 0%. Estimated remaining time: 3 hours, 23 minutes, 35 seconds.
+Computing permutation importance.. Progress: 5%. Estimated remaining time: 22 minutes, 57 seconds.
+Computing permutation importance.. Progress: 6%. Estimated remaining time: 25 minutes, 5 seconds.
+Computing permutation importance.. Progress: 10%. Estimated remaining time: 19 minutes, 29 seconds.
+Computing permutation importance.. Progress: 13%. Estimated remaining time: 19 minutes, 7 seconds.
+Computing permutation importance.. Progress: 16%. Estimated remaining time: 16 minutes, 42 seconds.
+Computing permutation importance.. Progress: 19%. Estimated remaining time: 16 minutes, 52 seconds.
+Computing permutation importance.. Progress: 22%. Estimated remaining time: 15 minutes, 17 seconds.
+Computing permutation importance.. Progress: 25%. Estimated remaining time: 14 minutes, 34 seconds.
+Computing permutation importance.. Progress: 29%. Estimated remaining time: 13 minutes, 28 seconds.
+Computing permutation importance.. Progress: 31%. Estimated remaining time: 13 minutes, 12 seconds.
+Computing permutation importance.. Progress: 35%. Estimated remaining time: 12 minutes, 8 seconds.
+Computing permutation importance.. Progress: 38%. Estimated remaining time: 11 minutes, 49 seconds.
+Computing permutation importance.. Progress: 42%. Estimated remaining time: 10 minutes, 43 seconds.
+Computing permutation importance.. Progress: 43%. Estimated remaining time: 10 minutes, 45 seconds.
+Computing permutation importance.. Progress: 47%. Estimated remaining time: 9 minutes, 44 seconds.
+Computing permutation importance.. Progress: 50%. Estimated remaining time: 9 minutes, 18 seconds.
+Computing permutation importance.. Progress: 53%. Estimated remaining time: 8 minutes, 38 seconds.
+Computing permutation importance.. Progress: 56%. Estimated remaining time: 7 minutes, 58 seconds.
+Computing permutation importance.. Progress: 59%. Estimated remaining time: 7 minutes, 27 seconds.
+Computing permutation importance.. Progress: 63%. Estimated remaining time: 6 minutes, 43 seconds.
+Computing permutation importance.. Progress: 66%. Estimated remaining time: 6 minutes, 14 seconds.
+Computing permutation importance.. Progress: 69%. Estimated remaining time: 5 minutes, 41 seconds.
+Computing permutation importance.. Progress: 71%. Estimated remaining time: 5 minutes, 13 seconds.
+Computing permutation importance.. Progress: 76%. Estimated remaining time: 4 minutes, 23 seconds.
+Computing permutation importance.. Progress: 79%. Estimated remaining time: 3 minutes, 47 seconds.
+Computing permutation importance.. Progress: 83%. Estimated remaining time: 3 minutes, 5 seconds.
+Computing permutation importance.. Progress: 85%. Estimated remaining time: 2 minutes, 39 seconds.
+Computing permutation importance.. Progress: 89%. Estimated remaining time: 2 minutes, 0 seconds.
+Computing permutation importance.. Progress: 92%. Estimated remaining time: 1 minute, 30 seconds.
+Computing permutation importance.. Progress: 96%. Estimated remaining time: 45 seconds.
+Growing trees.. Progress: 23%. Estimated remaining time: 1 minute, 43 seconds.
+Growing trees.. Progress: 48%. Estimated remaining time: 1 minute, 6 seconds.
+Growing trees.. Progress: 75%. Estimated remaining time: 31 seconds.
+Computing permutation importance.. Progress: 0%. Estimated remaining time: 3 hours, 23 minutes, 35 seconds.
+Computing permutation importance.. Progress: 4%. Estimated remaining time: 24 minutes, 34 seconds.
+Computing permutation importance.. Progress: 6%. Estimated remaining time: 25 minutes, 58 seconds.
+Computing permutation importance.. Progress: 10%. Estimated remaining time: 19 minutes, 19 seconds.
+Computing permutation importance.. Progress: 13%. Estimated remaining time: 19 minutes, 6 seconds.
+Computing permutation importance.. Progress: 17%. Estimated remaining time: 16 minutes, 31 seconds.
+Computing permutation importance.. Progress: 19%. Estimated remaining time: 16 minutes, 28 seconds.
+Computing permutation importance.. Progress: 23%. Estimated remaining time: 14 minutes, 35 seconds.
+Computing permutation importance.. Progress: 26%. Estimated remaining time: 14 minutes, 16 seconds.
+Computing permutation importance.. Progress: 30%. Estimated remaining time: 13 minutes, 13 seconds.
+Computing permutation importance.. Progress: 32%. Estimated remaining time: 12 minutes, 48 seconds.
+Computing permutation importance.. Progress: 36%. Estimated remaining time: 12 minutes, 0 seconds.
+Computing permutation importance.. Progress: 39%. Estimated remaining time: 11 minutes, 6 seconds.
+Computing permutation importance.. Progress: 42%. Estimated remaining time: 10 minutes, 37 seconds.
+Computing permutation importance.. Progress: 45%. Estimated remaining time: 10 minutes, 1 seconds.
+Computing permutation importance.. Progress: 49%. Estimated remaining time: 9 minutes, 21 seconds.
+Computing permutation importance.. Progress: 52%. Estimated remaining time: 8 minutes, 47 seconds.
+Computing permutation importance.. Progress: 55%. Estimated remaining time: 8 minutes, 14 seconds.
+Computing permutation importance.. Progress: 59%. Estimated remaining time: 7 minutes, 22 seconds.
+Computing permutation importance.. Progress: 62%. Estimated remaining time: 6 minutes, 42 seconds.
+Computing permutation importance.. Progress: 66%. Estimated remaining time: 5 minutes, 52 seconds.
+Computing permutation importance.. Progress: 70%. Estimated remaining time: 5 minutes, 2 seconds.
+Computing permutation importance.. Progress: 75%. Estimated remaining time: 4 minutes, 14 seconds.
+Computing permutation importance.. Progress: 79%. Estimated remaining time: 3 minutes, 24 seconds.
+Computing permutation importance.. Progress: 84%. Estimated remaining time: 2 minutes, 36 seconds.
+Computing permutation importance.. Progress: 88%. Estimated remaining time: 1 minute, 50 seconds.
+Computing permutation importance.. Progress: 93%. Estimated remaining time: 1 minute, 1 seconds.
+Growing trees.. Progress: 33%. Estimated remaining time: 1 minute, 2 seconds.
+Growing trees.. Progress: 69%. Estimated remaining time: 28 seconds.
+Computing permutation importance.. Progress: 1%. Estimated remaining time: 1 hour, 38 minutes, 36 seconds.
+Computing permutation importance.. Progress: 6%. Estimated remaining time: 17 minutes, 24 seconds.
+Computing permutation importance.. Progress: 11%. Estimated remaining time: 13 minutes, 13 seconds.
+Computing permutation importance.. Progress: 16%. Estimated remaining time: 11 minutes, 30 seconds.
+Computing permutation importance.. Progress: 19%. Estimated remaining time: 11 minutes, 20 seconds.
+Computing permutation importance.. Progress: 24%. Estimated remaining time: 10 minutes, 23 seconds.
+Computing permutation importance.. Progress: 29%. Estimated remaining time: 9 minutes, 24 seconds.
+Computing permutation importance.. Progress: 33%. Estimated remaining time: 8 minutes, 46 seconds.
+Computing permutation importance.. Progress: 37%. Estimated remaining time: 8 minutes, 14 seconds.
+Computing permutation importance.. Progress: 42%. Estimated remaining time: 7 minutes, 34 seconds.
+Computing permutation importance.. Progress: 46%. Estimated remaining time: 6 minutes, 53 seconds.
+Computing permutation importance.. Progress: 50%. Estimated remaining time: 6 minutes, 22 seconds.
+Computing permutation importance.. Progress: 56%. Estimated remaining time: 5 minutes, 34 seconds.
+Computing permutation importance.. Progress: 60%. Estimated remaining time: 4 minutes, 59 seconds.
+Computing permutation importance.. Progress: 64%. Estimated remaining time: 4 minutes, 32 seconds.
+Computing permutation importance.. Progress: 68%. Estimated remaining time: 4 minutes, 1 seconds.
+Computing permutation importance.. Progress: 70%. Estimated remaining time: 3 minutes, 50 seconds.
+Computing permutation importance.. Progress: 73%. Estimated remaining time: 3 minutes, 34 seconds.
+Computing permutation importance.. Progress: 76%. Estimated remaining time: 3 minutes, 13 seconds.
+Computing permutation importance.. Progress: 79%. Estimated remaining time: 2 minutes, 53 seconds.
+Computing permutation importance.. Progress: 81%. Estimated remaining time: 2 minutes, 37 seconds.
+Computing permutation importance.. Progress: 84%. Estimated remaining time: 2 minutes, 16 seconds.
+Computing permutation importance.. Progress: 86%. Estimated remaining time: 1 minute, 56 seconds.
+Computing permutation importance.. Progress: 90%. Estimated remaining time: 1 minute, 27 seconds.
+Computing permutation importance.. Progress: 93%. Estimated remaining time: 1 minute, 4 seconds.
+Computing permutation importance.. Progress: 96%. Estimated remaining time: 33 seconds.
+Growing trees.. Progress: 13%. Estimated remaining time: 3 minutes, 35 seconds.
+Growing trees.. Progress: 29%. Estimated remaining time: 2 minutes, 30 seconds.
+Growing trees.. Progress: 45%. Estimated remaining time: 1 minute, 53 seconds.
+Growing trees.. Progress: 61%. Estimated remaining time: 1 minute, 20 seconds.
+Growing trees.. Progress: 76%. Estimated remaining time: 48 seconds.
+Growing trees.. Progress: 93%. Estimated remaining time: 15 seconds.
+Computing permutation importance.. Progress: 0%. Estimated remaining time: 4 hours, 27 minutes, 34 seconds.
+Computing permutation importance.. Progress: 2%. Estimated remaining time: 1 hour, 21 minutes, 25 seconds.
+Computing permutation importance.. Progress: 6%. Estimated remaining time: 31 minutes, 54 seconds.
+Computing permutation importance.. Progress: 7%. Estimated remaining time: 34 minutes, 30 seconds.
+Computing permutation importance.. Progress: 10%. Estimated remaining time: 28 minutes, 2 seconds.
+Computing permutation importance.. Progress: 12%. Estimated remaining time: 26 minutes, 53 seconds.
+Computing permutation importance.. Progress: 13%. Estimated remaining time: 26 minutes, 51 seconds.
+Computing permutation importance.. Progress: 16%. Estimated remaining time: 24 minutes, 19 seconds.
+Computing permutation importance.. Progress: 18%. Estimated remaining time: 23 minutes, 59 seconds.
+Computing permutation importance.. Progress: 20%. Estimated remaining time: 22 minutes, 51 seconds.
+Computing permutation importance.. Progress: 23%. Estimated remaining time: 21 minutes, 25 seconds.
+Computing permutation importance.. Progress: 25%. Estimated remaining time: 21 minutes, 7 seconds.
+Computing permutation importance.. Progress: 26%. Estimated remaining time: 20 minutes, 54 seconds.
+Computing permutation importance.. Progress: 29%. Estimated remaining time: 19 minutes, 29 seconds.
+Computing permutation importance.. Progress: 32%. Estimated remaining time: 18 minutes, 32 seconds.
+Computing permutation importance.. Progress: 34%. Estimated remaining time: 18 minutes, 1 seconds.
+Computing permutation importance.. Progress: 36%. Estimated remaining time: 17 minutes, 15 seconds.
+Computing permutation importance.. Progress: 39%. Estimated remaining time: 16 minutes, 27 seconds.
+Computing permutation importance.. Progress: 41%. Estimated remaining time: 16 minutes, 0 seconds.
+Computing permutation importance.. Progress: 43%. Estimated remaining time: 14 minutes, 54 seconds.
+Computing permutation importance.. Progress: 45%. Estimated remaining time: 14 minutes, 31 seconds.
+Computing permutation importance.. Progress: 47%. Estimated remaining time: 14 minutes, 4 seconds.
+Computing permutation importance.. Progress: 50%. Estimated remaining time: 13 minutes, 14 seconds.
+Computing permutation importance.. Progress: 52%. Estimated remaining time: 12 minutes, 39 seconds.
+Computing permutation importance.. Progress: 54%. Estimated remaining time: 12 minutes, 16 seconds.
+Computing permutation importance.. Progress: 56%. Estimated remaining time: 11 minutes, 40 seconds.
+Computing permutation importance.. Progress: 58%. Estimated remaining time: 11 minutes, 8 seconds.
+Computing permutation importance.. Progress: 60%. Estimated remaining time: 10 minutes, 42 seconds.
+Computing permutation importance.. Progress: 62%. Estimated remaining time: 10 minutes, 4 seconds.
+Computing permutation importance.. Progress: 64%. Estimated remaining time: 9 minutes, 24 seconds.
+Computing permutation importance.. Progress: 66%. Estimated remaining time: 8 minutes, 52 seconds.
+Computing permutation importance.. Progress: 69%. Estimated remaining time: 8 minutes, 7 seconds.
+Computing permutation importance.. Progress: 71%. Estimated remaining time: 7 minutes, 40 seconds.
+Computing permutation importance.. Progress: 73%. Estimated remaining time: 7 minutes, 15 seconds.
+Computing permutation importance.. Progress: 76%. Estimated remaining time: 6 minutes, 20 seconds.
+Computing permutation importance.. Progress: 77%. Estimated remaining time: 5 minutes, 57 seconds.
+Computing permutation importance.. Progress: 79%. Estimated remaining time: 5 minutes, 29 seconds.
+Computing permutation importance.. Progress: 82%. Estimated remaining time: 4 minutes, 41 seconds.
+Computing permutation importance.. Progress: 84%. Estimated remaining time: 4 minutes, 18 seconds.
+Computing permutation importance.. Progress: 86%. Estimated remaining time: 3 minutes, 31 seconds.
+Computing permutation importance.. Progress: 89%. Estimated remaining time: 2 minutes, 55 seconds.
+Computing permutation importance.. Progress: 92%. Estimated remaining time: 2 minutes, 10 seconds.
+Computing permutation importance.. Progress: 94%. Estimated remaining time: 1 minute, 25 seconds.
+Computing permutation importance.. Progress: 97%. Estimated remaining time: 43 seconds.
+Random Forest 
+
+87546 samples
+   11 predictor
+
+No pre-processing
+Resampling: Cross-Validated (5 fold) 
+Summary of sample sizes: 70037, 70037, 70035, 70038, 70037 
+Resampling results:
+
+  RMSE       Rsquared  MAE      
+  0.2006518  0.154173  0.1671702
+
+Tuning parameter 'mtry' was held constant at a value of 3
+Tuning
+ parameter 'splitrule' was held constant at a value of variance
+
+Tuning parameter 'min.node.size' was held constant at a value of 1
+[1] "Percentage of variance explained: 12.6502174833476 %"
+[1] "Out-of-Bag Error: 0.0401965288264952"
+Testing - R2 Score: 0.127666 
+Testing - MAE: 0.1674003 
+Testing - MSE: 0.04037747 
+Testing - RMSE: 0.2009415 
+Predicting.. Progress: 89%. Estimated remaining time: 3 seconds.
+Training - R2 Score: 0.1408596 
+Training - MAE: 0.1655813 
+Training - MSE: 0.03953538 
+Training - RMSE: 0.1988351 
+
+	Moran I test under randomisation
+
+data:  testData$residuals  
+weights: lw    
+
+Moran I statistic standard deviate = 281.4, p-value < 2.2e-16
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     7.291463e-02     -4.569131e-05      6.722429e-08 
+
+pdf 
+  2 
+Variable Importance:
+       Variable Importance
+1      entropy_ 15.6859936
+2        slope_ 12.6606202
+3       aspect_  0.7549768
+4          twi_  7.1788611
+5 shannon_41x41 18.1172429
+6  dominant_sp_ 16.6944864
+7         soil_ 12.7049987
+8    elevation_  1.1412024
+9  forestcover_ 15.0616178
+Modeling process completed successfully.
