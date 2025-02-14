@@ -18,16 +18,23 @@ library(viridis)
 library(RColorBrewer)
 library(ggrepel)
 
-# Load datasets (120000 samples)
-load("/gpfs1/work/acostave/120000/shannon_samples.RData")
-load("/gpfs1/work/acostave/120000/utm32.RData")
-load("/gpfs1/work/acostave/120000/tsm_matrix.RData")
+#####################################################################################################################
+############   Note: The following section of the code demonstrates how the data was imported into R.################
+############   However, this is provided only as an example to illustrate the data structure, as the ################
+############   Original datasets are not included in this repository.                                ################
+#####################################################################################################################
 
-#### #the RData with the random forest Model result, the training data, testing data and complete table are in here
+load("/acostave/2020/traindata.RData") #change with the current path (located in Data file)
+load("/acostave/2020/testdata.RData") #change with the current path (located in Data file)
+load("/acostave/2020/forestmodel.RData") #change with the current path (located in Data file)
 
-load("/gpfs1/work/acostave/2020/traindata.RData")
-load("/gpfs1/work/acostave/2020/testdata.RData")
-load("/gpfs1/work/acostave/2020/forestmodel.RData")
+#######################################################################################################################
+
+# Load datasets (120000 samples) 
+load("/work/acostave/120000/shannon_samples.RData")
+load("/work/acostave/120000/utm32.RData")
+load("/work/acostave/120000/tsm_matrix.RData")
+
 
 sampled_coords_df <- data.frame(coordinates(sample_coordinates_utm32))
 
@@ -40,9 +47,8 @@ sampled_coords_df <- data.frame(coordinates(sample_coordinates_utm32))
   fca <- raster("/gpfs1/data/satellite/sentinel/germany/forest-condition/v0007-0005/2020/tif-Germany_cog/Forest_condition_v0007-0005_Germany_2020_full_bmean_R20m_cog.tif")
   elevation <- raster("/gpfs1/work/acostave/elevation_cleaned.tif")
   twi <- raster("/gpfs1/schlecker/home/acostave/twi_res20_cog.tif")
-  #precip <- raster("/gpfs1/work/acostave/precipitation/precipitation_2017.tif")
   dominant_sp <- raster("/gpfs1/work/acostave/Species_Dominant/species_dominant_mosaic.tif")
-  #gr <- raster("/gpfs1/data/rs-validation/validation_forest_condition/growing_areas/raster/wg_raster_20m.tif")
+
   
 print ("rasters imported")
 # Extract values from raster layers
@@ -54,9 +60,8 @@ print ("rasters imported")
   elevation_ <- extract(elevation, sample_coordinates_utm32)
   fca_ <- extract(fca, sample_coordinates_utm32)
   twi_ <- extract(twi, sample_coordinates_utm32)
-  #precip_ <- extract(precip, sample_coordinates_utm32)
   dominant_sp_ <- extract(dominant_sp, sample_coordinates_utm32)
-  #growingreg_ <- extract(gr, sample_coordinates_utm32)
+
   
 # Create dataframe
   shannon_41x41 <- shannon_matrix[,"41x41"] / log(11)
@@ -71,14 +76,14 @@ print ("rasters imported")
   fca_df2 <- fca_df / 10000
   twi_df <- as.data.frame(twi_)
   dominant_spdf<- as.data.frame(dominant_sp_)
-  #growingreg_df <- as.data.frame(growingreg_)
+
  
 #Combine data
 tablemodel <- data.frame(shannon_df, soil_df, elevation_df, slope_df, aspect_df, entropy_df, twi_df, dominant_spdf, forestcover_df, fca_df2)
 tablemodel$soil_ <- as.factor(tablemodel$soil_)
 tablemodel$elevation_ <- as.factor(tablemodel$elevation_)
 tablemodel$dominant_sp_ <- as.factor(tablemodel$dominant_sp_)
-#tablemodel$growingreg_ <- as.factor(tablemodel$growingreg_)
+
 
 str(tablemodel)
 
@@ -86,11 +91,13 @@ str(tablemodel)
 table_model_coord <- data.frame(x = sampled_coords_df[, 1], y = sampled_coords_df[, 2], tablemodel)
 write.csv(table_model_coord, "tablemodel_scaled.csv", row.names = FALSE)
 
-
 # Remove missing values
 fully_cleaned_data <- na.omit(table_model_coord)
 save(fully_cleaned_data, file = "/gpfs1/work/acostave/FINALRESULTS/fully_cleaned_data2020.RData")
 str(fully_cleaned_data)
+
+###########################################################################################################################
+
 # Correlation matrix
 categorical_vars <- c("elevation_", "dominant_sp_", "soil_")
 columns_to_scale <- setdiff(names(fully_cleaned_data), c("x", "y", "fca_", categorical_vars))
