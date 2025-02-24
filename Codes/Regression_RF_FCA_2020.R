@@ -30,6 +30,7 @@ library(ggrepel)
 load("/acostave/2020/traindata.RData") #change with the correct path (located in Data folder)
 load("/acostave/2020/testdata.RData") #change with the correct path (located in Data folder)
 load("/acostave/2020/forestmodel.RData") #change with the correct path (located in Data folder)
+load("/acostave/2020/fully_cleaned_data2020.RData") #change with the correct path (located in Data folder), this RData contains the complete table used in the model.
 
 #######################################################################################################################
 
